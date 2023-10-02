@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filtro</title>
+
+    <script>
+        function filtrar() {
+            const filtro = document.getElementById("busca").value.toLowerCase();
+            const lista = document.getElementsByTagName("li");
+
+            for (const li of lista) {
+                if (li.innerText.toLowerCase().includes(filtro)) {
+                    li.style.fontWeight = 'bold';
+                } else {
+                    li.style.fontWeight = "normal";
+                }
+            }
+        }
+    </script>
+    </script>
+</head>
+
+<body>
+    <form>
+        <label>Busca:</label>
+        <input type="text" id="busca" oninput="filtrar();">
+    </form>
+    <ul>
+        <li>Ana</li>
+        <li>Isabelli</li>
+        <li>João</li>
+        <li>Júlia</li>
+        <li>Rafaela</li>
+        <li>Vini</li>
+    </ul>
+</body>
+
+</html>
